@@ -1,8 +1,8 @@
 struct ListNode* reverse(struct ListNode* head){
     struct ListNode *tmp,*current=head,*prev=NULL;
     while (current){
-        tmp=prev;prev=current->next;current->next=tmp;
-        tmp=prev;prev=current;current=tmp;
+        tmp=prev;prev=current->next;current->next=tmp;//current->next points to prev
+        tmp=prev;prev=current;current=tmp;//swap prev and current
     }
     return prev;
 }
