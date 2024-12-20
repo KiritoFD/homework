@@ -37,6 +37,7 @@ int delete(int* list, int* len, int target) {
       return 1;
     }
   }
+  return 0;
 }
 
 void InsertTestCase() {

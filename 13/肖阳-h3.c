@@ -5,6 +5,10 @@
  *     struct ListNode *next;
  * };
  */
+struct ListNode{
+    int val;
+    struct ListNode *next;
+};
 struct ListNode* rotateRight(struct ListNode* head, int k) {
     if(!head||!k||!head->next) return head;
     

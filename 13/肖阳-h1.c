@@ -9,6 +9,11 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+struct TreeNode{
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
  void help(struct TreeNode *root,int ans[],int*count){
     if(root==NULL) return;
     else{
@@ -34,7 +39,7 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize) {
         node = stack[--stackSize];
         countNodes++;
         node = node->right;
-    }
+    }//向左走到头，将叶节点入栈，然后向右走到头，出栈，直到栈空，返回结果
     int *ans=(int*)malloc(sizeof(int)* countNodes);
     int count=0;
     help(root,ans,&count);

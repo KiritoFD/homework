@@ -4,18 +4,16 @@ double f(float x){
     return exp(x*x);
 }
 double Integral(double a, double b, double eps) {
-    double last=-1,next=0,gap=0.1;double i;
+    double last=-1,next=0,gap=0.1;
     while(fabs(last-next)>=eps){
         last=next;
         next=0;
-        i=a;
-        while(i<b-gap){
-            next+=f((i+i-gap)/2)*gap;
-            i+=gap;
-        }next+=f((i+b)/2)*(b-i);
+        for(double a1=a+gap;a1<b-gap;a1+=gap){
+            next+=f((a+a-gap)/2)*gap;
+        }next+=f((a+b)/2)*(b-a);
         gap/=10;
     }return next;
-}
+}//积分函数
 int main()
 {
     double a,b,eps;
